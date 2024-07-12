@@ -1,18 +1,7 @@
-# sinatra-template
+# Art Institute of Chicago Virtual Gallery
 
-Use this repository to create new Sinatra apps. 
+This is a  web application that fetches and displays random artworks from the Art Institute of Chicago's public API. The application displays three artworks at a time and allows users to fetch new artworks without reloading the page.
 
-Optionally, to use `ActiveRecord` for database operations, add to the `app.rb`:
+## Technologies Used
 
-```ruby
-require "sinatra/activerecord"
-```
-
-And in the `config/environment.rb` file add this code block:
-
-```ruby
-configure do
-  # setup a database connection
-  set(:database, { adapter: "sqlite3", database: "db/development.sqlite3" })
-end
-```
+ Ruby, Sinatra, HTTParty, HTML/CSS

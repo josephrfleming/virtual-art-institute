@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Generator</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: #f5f5f5;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        #new-artworks-button {
+            font-size: 1em;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        #new-artworks-button:hover {
+            background-color: #555;
+        }
+        .artwork {
+            margin: 20px;
+            display: inline-block;
+            vertical-align: top;
+            width: calc(33.33% - 40px);
+            box-sizing: border-box;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .artwork img {
+            max-width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .artwork h2 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .artwork p {
+            font-size: 1em;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Randomly Selected Artwork from the Art Institute of Chicago</h1>
+    <form action="/fetch_artworks" method="post">
+        <button type="submit" id="new-artworks-button">Fetch New Artwork</button>
+    </form>
+    <div id="artworks-container">
+        <% @artworks.each do |artwork| %>
+            <div class="artwork">
+                <h2><%= artwork['title'] %></h2>
+                <% if artwork['image_url'] %>
+                    <img src="<%= artwork['image_url'] %>" alt="<%= artwork['title'] %>">
+                <% else %>
+                    <p>No image available</p>
+                <% end %>
+                <p><%= artwork['artist_title'] %></p>
+            </div>
+        <% end %>
+    </div>
+</body>
+</html>

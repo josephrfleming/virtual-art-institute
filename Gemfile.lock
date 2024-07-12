@@ -20,6 +20,7 @@ GEM
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
+    bigdecimal (3.1.8)
     binding_of_caller (1.0.0)
       debug_inspector (>= 0.0.1)
     capybara (3.39.2)
@@ -38,6 +39,7 @@ GEM
     concurrent-ruby (1.2.2)
     crack (0.4.5)
       rexml
+    csv (3.3.0)
     debug_inspector (1.1.0)
     diff-lcs (1.5.0)
     draft_matchers (0.0.2)
@@ -58,13 +60,20 @@ GEM
       oj (~> 3.13.12)
       rake (~> 13)
     hashdiff (1.0.1)
+    httparty (0.22.0)
+      csv
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
+    json (2.7.2)
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.5)
     minitest (5.18.1)
     multi_json (1.15.0)
+    multi_xml (0.7.1)
+      bigdecimal (~> 3.1)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.5.9)
@@ -164,7 +173,9 @@ DEPENDENCIES
   capybara
   draft_matchers
   grade_runner
+  httparty
   i18n
+  json
   pry
   puma (~> 5.0)
   rspec
